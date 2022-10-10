@@ -1,9 +1,16 @@
 import styled from 'styled-components'
+import { IBrandAll } from '../models/IBrand'
 
-interface IBrand {
-  brand: string
+interface Brand {
+  brand: IBrandAll
 }
 
-export const Container = styled.div<IBrand>`
-  background: ${(props) => (props.brand === 'BK' ? 'red' : 'orange')};
+export const Container = styled.main<Brand>`
+  display: flex;
+  margin: 0 auto;
+  padding: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  background: ${(props) => props.brand.colors.background};
 `
